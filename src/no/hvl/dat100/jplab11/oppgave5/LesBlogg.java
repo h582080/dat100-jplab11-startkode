@@ -16,6 +16,8 @@ import no.hvl.dat100.jplab11.oppgave3.*;
 import javax.swing.JOptionPane;
 
 public class LesBlogg {
+	
+	private static String MAPPE = System.getProperty("user.dir") + "/src/no/hvl/dat100/jplab11/tests/";
 
 	private static String TEKST = "TEKST";
 	private static String BILDE = "BILDE";

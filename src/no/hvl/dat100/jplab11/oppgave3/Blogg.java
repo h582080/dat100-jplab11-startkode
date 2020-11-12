@@ -6,37 +6,94 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 public class Blogg {
 
 	// TODO: objektvariable 
+	
+	private Innlegg[] innlegtabell;	
+	private int nesteledige;
+	
+
+	
 
 	public Blogg() {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		this.nesteledige = 20;
+		this.innlegtabell = new Innlegg[20];
+		
 	}
 
 	public Blogg(int lengde) {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		innlegtabell = new Innlegg[lengde];
 	}
 
 	public int getAntall() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.nesteledige;
 	}
 	
 	public Innlegg[] getSamling() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return this.innlegtabell;
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
+		boolean funnet = false;
+		int pos = 0;
+		while (pos<nesteledige && !funnet) {
+			if (innlegtabell[pos].erLik(innlegg)){
+			    funnet = true;	
+			} else {
+				pos++;
+			}
+			
+		}
+		if (funnet) {
+			return pos;
+		}
+		else {		
+		    return -1;	
+		}
+		
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		boolean funnet = false;
+		int pos = 0;
+		while(pos<nesteledige && !funnet) {
+			if (innlegtabell[pos].getId() == innlegg.getId()) {
+				funnet = true;
+			}
+			else {
+				pos++;
+			}
+			
+		}
+		
+		if (funnet) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
+		
+	   boolean funnet = false;
+			
+		while (nesteledige < innlegtabell.length) {
+			    if (innlegtabell == null) {
+			    	funnet = true;
+			    	
+			    } else {
+			        funnet = false;
+			    }
+		
+	    } 
+		
+		if (funnet) {
+			return true;
+		}
+		else {
+			return false;
+		}
+			
+    }
 
-	}
 	
 	public boolean leggTil(Innlegg innlegg) {
 
