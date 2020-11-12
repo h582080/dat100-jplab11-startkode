@@ -76,7 +76,7 @@ public class Blogg {
 	   boolean funnet = false;
 			
 		while (nesteledige < innlegtabell.length) {
-			    if (innlegtabell == null) {
+			    if (innlegtabell[nesteledige] == null) {
 			    	funnet = true;
 			    	
 			    } else {
@@ -97,8 +97,25 @@ public class Blogg {
 	
 	public boolean leggTil(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		boolean ledig = false;
+		
+		while (nesteledige < innlegtabell.length) {
+			if (innlegtabell[nesteledige] == null) {
+				ledig = true;
+			} else {
+				ledig = false;
+			}
+		}
+		
+		if (ledig) {
+			innlegtabell[nesteledige] = new Innlegg(innlegg);
+			return true;
+		} else {
+			return false;
+		}
 	}
+
+		
 	
 	public String toString() {
 		throw new UnsupportedOperationException(TODO.method());
